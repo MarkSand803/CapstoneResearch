@@ -56,3 +56,13 @@ footer { color: #7890aa; font-size: 12px; padding: 24px 0 0; text-align: center;
 .side-button:disabled { background: #23354a; border-color: #344b65; color: #7890aa; }
 .active-bet { color: #52db8d; font-weight: 700; margin: 12px 0 0; }
 .empty { color: #7990a9; font-style: italic; }
+
+/* Game day */
+.primary-button { background: #00c98d; border: 1px solid #65f2c8; border-radius: 8px; color: #062238; font-weight: 900; margin-top: 16px; padding: 11px 14px; }
+.primary-button:disabled { background: #23354a; border-color: #344b65; color: #7890aa; }
+[hidden] { display: none !important; }
+.result-card { background: #14253a; border: 1px solid #29435f; border-radius: 10px; padding: 12px 14px; }
+.result-card.win { border-color: #00c98d; }
+.result-card.loss { border-color: #7f3b46; }
+.result-card b.win { color: #52db8d; }
+.result-card b.loss { color: #ff9b9b; }
