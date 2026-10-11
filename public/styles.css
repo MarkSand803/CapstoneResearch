@@ -41,3 +41,18 @@ p { color: #9eb5cc; line-height: 1.5; }
 .pick-button:disabled { background: #23354a; border-color: #344b65; color: #7890aa; }
 
 footer { color: #7890aa; font-size: 12px; padding: 24px 0 0; text-align: center; }
+
+/* Bets */
+.bet-list { display: grid; gap: 12px; }
+.bet-card { background: #14253a; border: 1px solid #29435f; border-left-width: 4px; border-radius: 10px; padding: 14px; }
+.bet-top { align-items: center; display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; }
+.bet-top small { color: #91a9c0; display: block; margin-top: 3px; }
+.line-badge { background: #0c2238; border: 1px solid #29486b; border-radius: 10px; color: #ffd36c; font-size: 18px; font-weight: 900; padding: 8px 12px; text-align: center; }
+.line-badge small { color: #91a9c0; font-size: 11px; font-weight: 700; }
+.bet-form { align-items: center; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.bet-form input { background: #0c2238; border: 1px solid #3c5979; border-radius: 8px; color: #edf5ff; font: inherit; padding: 8px; width: 110px; }
+.side-button { background: #00c98d; border: 1px solid #65f2c8; border-radius: 8px; color: #062238; font-weight: 900; padding: 8px 14px; }
+.side-button.under { background: #f59e0b; border-color: #fcd34d; }
+.side-button:disabled { background: #23354a; border-color: #344b65; color: #7890aa; }
+.active-bet { color: #52db8d; font-weight: 700; margin: 12px 0 0; }
+.empty { color: #7990a9; font-style: italic; }

@@ -1,5 +1,6 @@
 import { request } from "./api.js";
 import { renderTeams, setupLeagueTabs } from "./teams.js";
+import { renderBets } from "./bets.js";
 
 const messageElement = document.querySelector("#message");
 const tokenDisplay = document.querySelector("#token-display");
@@ -27,6 +28,7 @@ function render() {
   tokenDisplay.textContent = `◉ ${state.tokens} tokens`;
   weekLabel.textContent = `WEEK ${state.week}`;
   renderTeams(state, (id) => act("/api/picks", "POST", { teamId: id }), (id) => act(`/api/picks/${id}`, "DELETE"));
+  renderBets(state, (teamId, side, amount) => act("/api/bets", "POST", { teamId, side, amount }, `Bet placed: ${amount} tokens on the ${side}.`));
 }
 
 async function start() {
