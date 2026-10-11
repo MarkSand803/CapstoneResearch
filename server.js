@@ -2,6 +2,7 @@ import express from "express";
 import { join } from "node:path";
 import { teams } from "./teams.js";
 import * as game from "./game.js";
+import * as rewards from "./rewards.js";
 
 const app = express();
 const port = Number(process.env.PORT || 3000);
@@ -18,7 +19,8 @@ function publicState() {
     teams: teams.map((team) => ({ ...team, ...s.lines[team.id] })),
     picks: s.picks,
     bets: s.bets,
-    results: s.results
+    results: s.results,
+    rewards: rewards.rewardStatus()
   };
 }
 
@@ -39,6 +41,8 @@ app.post("/api/picks", handle((req) => game.addPick(req.body.teamId)));
 app.delete("/api/picks/:teamId", handle((req) => game.removePick(req.params.teamId)));
 app.post("/api/bets", handle((req) => game.placeBet(req.body.teamId, req.body.side, Number(req.body.amount))));
 app.post("/api/settle", handle(() => game.settleWeek()));
+app.post("/api/claim", handle(() => rewards.claimDaily()));
+app.post("/api/dev/skip", handle((req) => rewards.skipTime(req.body.hours)));
 app.post("/api/reset", handle(() => game.resetAll()));
 
 app.listen(port, () => console.log(`Self Fantasy running at http://localhost:${port}`));
