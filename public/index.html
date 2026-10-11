@@ -1,1 +1,43 @@
-<h1>Self Fantasy</h1>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Self Fantasy | Team Over/Under</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header>
+        <div class="brand"><span>◈</span><strong>SELF<br />FANTASY</strong></div>
+        <div class="badge">TEAM OVER/UNDER</div>
+        <div id="token-display" class="token-display">◉ 0 tokens</div>
+      </header>
+
+      <p id="message" class="message" aria-live="polite"></p>
+
+      <section id="fantasy-screen">
+        <section class="hero">
+          <p class="eyebrow" id="week-label">WEEK 1</p>
+          <h1>Back your team.</h1>
+          <p>Pick up to 5 favorite teams, then bet tokens on whether they go over or under their line.</p>
+        </section>
+
+        <section class="panel" id="picker-panel">
+          <div class="panel-heading">
+            <div><p class="eyebrow">STEP 1</p><h2>Pick your teams</h2></div>
+            <span id="pick-count" class="count">0 / 5</span>
+          </div>
+          <div class="filter-tabs">
+            <button class="filter-tab active" data-league="NFL">NFL</button>
+            <button class="filter-tab" data-league="College">College</button>
+          </div>
+          <div id="team-grid" class="team-grid"></div>
+        </section>
+      </section>
+
+      <footer>Rough draft. Data is saved in a local data.json file; teams and lines are made up.</footer>
+    </main>
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>
