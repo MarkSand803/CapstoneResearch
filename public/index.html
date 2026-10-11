@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Self Fantasy | Team Over/Under</title>
     <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/rewards.css" />
   </head>
   <body>
     <main class="app-shell">
@@ -52,8 +53,35 @@
         </section>
       </section>
 
+      <section class="demo-tools">
+        <span>Demo tools (for the video):</span>
+        <button id="skip-24" class="quiet-button">Skip 24 hours</button>
+        <button id="skip-48" class="quiet-button">Skip 2 days (miss a day)</button>
+        <button id="reset-button" class="quiet-button">Reset everything</button>
+      </section>
+
       <footer>Rough draft. Data is saved in a local data.json file; teams and lines are made up.</footer>
     </main>
+
+    <!-- Corner widget: always visible so you can see your streak -->
+    <button id="streak-widget" class="streak-widget" aria-label="Open daily rewards">
+      <span class="streak-fire">🔥</span>
+      <span><strong id="widget-streak">Day 0</strong><small id="widget-timer">Loading...</small></span>
+    </button>
+
+    <!-- Daily rewards popup -->
+    <div id="rewards-popup" class="popup-backdrop" hidden>
+      <div class="popup" role="dialog" aria-labelledby="popup-title">
+        <button id="popup-close" class="popup-close" aria-label="Close">×</button>
+        <p class="eyebrow">DAILY REWARD</p>
+        <h2 id="popup-title">Daily login streak</h2>
+        <div class="streak-counter"><span id="popup-streak">0</span><small>day streak</small></div>
+        <div id="reward-days" class="reward-days"></div>
+        <p id="popup-note"></p>
+        <button id="claim-button" class="primary-button">Claim tokens</button>
+      </div>
+    </div>
+
     <script type="module" src="/js/main.js"></script>
   </body>
 </html>

@@ -1,0 +1,22 @@
+/* Daily rewards: corner widget + popup */
+.streak-widget { align-items: center; background: #101e31; border: 1px solid #f59e0b; border-radius: 14px; bottom: 18px; box-shadow: 0 6px 20px #0008; color: #edf5ff; display: flex; gap: 10px; padding: 10px 14px; position: fixed; right: 18px; text-align: left; z-index: 10; }
+.streak-widget.ready { animation: pulse 1.6s infinite; background: #3a2a08; }
+.streak-widget small { color: #9eb5cc; display: block; font-size: 11px; margin-top: 2px; }
+.streak-fire { font-size: 24px; }
+@keyframes pulse { 50% { box-shadow: 0 0 0 6px #f59e0b44; } }
+
+.popup-backdrop { align-items: center; background: #000a; display: flex; inset: 0; justify-content: center; padding: 16px; position: fixed; z-index: 20; }
+.popup { background: #101e31; border: 1px solid #2677d8; border-radius: 16px; max-width: 460px; padding: 26px; position: relative; text-align: center; width: 100%; }
+.popup-close { background: transparent; border: 0; color: #9eb5cc; font-size: 28px; position: absolute; right: 14px; top: 8px; }
+.streak-counter span { color: #ffd36c; font-size: 56px; font-weight: 900; }
+.streak-counter small { color: #9eb5cc; display: block; }
+
+.reward-days { display: grid; gap: 6px; grid-template-columns: repeat(7, 1fr); margin: 16px 0; }
+.reward-day { background: #14253a; border: 1px solid #29435f; border-radius: 8px; font-size: 11px; padding: 8px 2px; }
+.reward-day b { color: #ffd36c; display: block; font-size: 15px; }
+.reward-day.done { background: #174d45; border-color: #00c98d; }
+.reward-day.next { border-color: #f59e0b; box-shadow: 0 0 0 2px #f59e0b66; }
+.reward-day.bonus b { color: #ff9bf0; }
+
+.demo-tools { align-items: center; border: 1px dashed #3c5979; border-radius: 12px; color: #91a9c0; display: flex; flex-wrap: wrap; font-size: 12px; gap: 8px; margin-top: 22px; padding: 12px; }
+.quiet-button { background: transparent; border: 1px solid #3c5979; border-radius: 8px; color: #cfe1f3; font-weight: 700; padding: 7px 10px; }
