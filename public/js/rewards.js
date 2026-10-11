@@ -37,15 +37,15 @@ export function renderRewards(newRewards) {
     ? "You missed a day, so your streak reset. Claim now to start again at Day 1."
     : "Open the app every 24 hours to keep your streak going. Day 7 is a big bonus!";
 
-  const cycleDay = rewards.streak % 7; // days already claimed in this 7-day cycle
+  const nextCycleDay = ((rewards.nextDay - 1) % 7) + 1; // which of the 7 boxes is up next
   rewardDays.innerHTML = "";
   rewards.schedule.forEach((tokens, index) => {
     const day = index + 1;
     const cell = document.createElement("div");
     cell.className = "reward-day";
     if (day === 7) cell.classList.add("bonus");
-    if (day <= cycleDay || (rewards.streak > 0 && cycleDay === 0)) cell.classList.add("done");
-    if (day === ((rewards.nextDay - 1) % 7) + 1) cell.classList.remove("done"), cell.classList.add("next");
+    if (day < nextCycleDay) cell.classList.add("done");
+    if (day === nextCycleDay) cell.classList.add("next");
     cell.innerHTML = `Day ${day}<b>${tokens}</b>`;
     rewardDays.append(cell);
   });
